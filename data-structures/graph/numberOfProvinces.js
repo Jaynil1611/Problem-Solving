@@ -1,3 +1,9 @@
+/*
+https://takeuforward.org/data-structure/number-of-provinces/
+SC -> O(N)   (ignoring the adjacency list)
+TC -> O(N)
+*/
+
 function converAdjMatrixToList(adjMatrix) {
   const size = adjMatrix.length;
   const adjList = Array.from({ length: size }, () => new Array(0));
