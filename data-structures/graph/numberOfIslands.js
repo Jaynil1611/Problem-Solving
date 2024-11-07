@@ -4,14 +4,6 @@ TC -> O(N^2)
 SC -> O(N^2)
 */
 
-const grid = [
-  ["0", "1", "1", "0"],
-  ["0", "1", "1", "0"],
-  ["0", "0", "0", "0"],
-  ["1", "1", "1", "0"],
-  ["1", "0", "0", "1"],
-];
-
 function numberOfIslands(grid) {
   const n = grid.length;
   const m = grid[0].length;
@@ -50,5 +42,13 @@ function depthFirstSearch(row, col, grid, visited, n, m) {
     }
   }
 }
+
+const grid = [
+  ["0", "1", "1", "0"],
+  ["0", "1", "1", "0"],
+  ["0", "0", "0", "0"],
+  ["1", "1", "1", "0"],
+  ["1", "0", "0", "1"],
+];
 
 numberOfIslands(grid);
