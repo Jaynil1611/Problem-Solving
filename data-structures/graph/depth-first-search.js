@@ -1,3 +1,9 @@
+/**
+ * https://takeuforward.org/data-structure/depth-first-search-dfs/
+ * SC -> O(N) + O(N)
+ * TC -> O(N + 2E)
+ */
+
 function Edge(src, dest) {
   this.src = src;
   this.dest = dest;
