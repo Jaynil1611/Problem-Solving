@@ -1,5 +1,7 @@
 /**
  * https://takeuforward.org/graph/bipartite-graph-bfs-implementation/
+ * https://takeuforward.org/graph/bipartite-graph-dfs-implementation/
+ * Same time & space for BFS & DFS
  * SC - > O(N) + O(N)
  * TC - > O(N + 2E)
  */
@@ -46,6 +48,21 @@ function breadthFirstSearch(startingNode, adjList, color) {
   return true;
 }
 
+function depthFirstSearch(startingNode, nodeColor, adjList, color) {
+  color[startingNode] = nodeColor;
+
+  for (let neighbour of adjList.get(startingNode)) {
+    if (color[neighbour] === -1) {
+      if (depthFirstSearch(neighbour, !nodeColor, adjList, color) === false) {
+        return false;
+      }
+    } else if (color[neighbour] === nodeColor) {
+      return false;
+    }
+  }
+  return true;
+}
+
 function checkIfGraphIsBipartite(adjList) {
   const size = adjList.size;
   const color = new Array(size + 1).fill(-1);
@@ -53,7 +70,10 @@ function checkIfGraphIsBipartite(adjList) {
   // for connected components of the graph
   for (let i = 1; i < size; i++) {
     if (color[i] === -1) {
-      if (breadthFirstSearch(i, adjList, color) === false) {
+      // if (breadthFirstSearch(i, adjList, color) === false) {
+      //   return false;
+      // }
+      if (depthFirstSearch(i, 0, adjList, color) === false) {
         return false;
       }
     }
@@ -95,6 +115,6 @@ const notBipartiteEdges = [
   new Edge(8, 7),
 ];
 
-const graph = new Graph(bipartiteEdges);
+const graph = new Graph(notBipartiteEdges);
 const list = graph.getAdjList();
 console.log(checkIfGraphIsBipartite(list));
