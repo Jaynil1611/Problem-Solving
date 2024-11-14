@@ -1,8 +1,8 @@
 /**
  * https://takeuforward.org/data-structure/detect-cycle-in-an-undirected-graph-using-bfs/
- * SC -> O(N) + O(N) 
+ * SC -> O(N) + O(N)
  * TC -> O(N + 2E) + O(N)
- * 
+ *
  * https://takeuforward.org/data-structure/detect-cycle-in-an-undirected-graph-using-dfs/
  * SC -> O(N) + O(N)
  * TC -> O(N + 2E) + O(N)
@@ -22,6 +22,12 @@ const Graph = function (edges) {
       adj.get(src).push(dest);
     } else {
       adj.set(src, [dest]);
+    }
+  }
+
+  for (let i = 0; i < size; i++) {
+    if (!adj.has(i)) {
+      adj.set(i, []);
     }
   }
 

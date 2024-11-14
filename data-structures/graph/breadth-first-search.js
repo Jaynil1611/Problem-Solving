@@ -21,6 +21,12 @@ const Graph = function (edges) {
     }
   }
 
+  for (let i = 0; i < size; i++) {
+    if (!adj.has(i)) {
+      adj.set(i, []);
+    }
+  }
+
   this.getAdjList = () => adj;
 };
 
