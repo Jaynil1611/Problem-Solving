@@ -2,7 +2,7 @@
  * https://takeuforward.org/data-structure/kahns-algorithm-topological-sort-algorithm-bfs-g-22/
  * SC -> O(V) + O(V)
  * TC -> O(V + E)
- */
+*/
 
 function Edge(src, dest) {
   this.src = src;
