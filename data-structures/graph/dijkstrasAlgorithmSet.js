@@ -1,4 +1,10 @@
-function Edge(src, dest,weight) {
+/**
+ * https://takeuforward.org/data-structure/dijkstras-algorithm-using-set-g-33/
+ * SC -> O(E) + O(V)
+ * TC -> O(ElogV)
+ */
+
+function Edge(src, dest, weight) {
   this.src = src;
   this.dest = dest;
   this.weight = weight;
