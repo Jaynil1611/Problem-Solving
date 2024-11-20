@@ -47,7 +47,6 @@ function dijkstraShortestPathWithinKStops(flights, source, destination, N, K) {
       }
     }
   }
-
   return distance[destination] === Number.POSITIVE_INFINITY
     ? -1
     : distance[destination];
