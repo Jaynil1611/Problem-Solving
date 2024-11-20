@@ -10,6 +10,7 @@ function pathWithMinimumEffort(heights) {
   const distance = Array.from({ length: n }, () =>
     new Array(m).fill(Number.POSITIVE_INFINITY)
   );
+  let result = Number.POSITIVE_INFINITY;
   const set = new Set();
   const delRow = [-1, 0, 1, 0];
   const delCol = [0, -1, 0, 1];
@@ -23,7 +24,7 @@ function pathWithMinimumEffort(heights) {
     const [diff, row, col] = cell;
 
     if (row === n - 1 && col === m - 1) {
-      return diff;
+      result = Math.min(result, diff);
     }
 
     for (let i = 0; i < 4; i++) {
@@ -32,18 +33,18 @@ function pathWithMinimumEffort(heights) {
 
       if (nrow >= 0 && ncol >= 0 && nrow < n && ncol < m) {
         const effort = Math.max(
-          Math.abs(heights[nrow][ncol] - heights[row][col]),
+          Math.abs(heights[row][col] - heights[nrow][ncol]),
           diff
         );
 
         if (effort < distance[nrow][ncol]) {
           distance[nrow][ncol] = effort;
-          set.add([distance[nrow][ncol], nrow, ncol]);
+          set.add([effort, nrow, ncol]);
         }
       }
     }
   }
-  return 0;
+  return result === Number.POSITIVE_INFINITY ? 0 : result;
 }
 
 const heights = [
