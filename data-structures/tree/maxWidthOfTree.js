@@ -1,3 +1,9 @@
+/**
+ * https://takeuforward.org/data-structure/maximum-width-of-a-binary-tree/
+ * SC -> O(N)
+ * TC -> O(N)
+ */
+
 function Node(data) {
   this.left = null;
   this.right = null;
