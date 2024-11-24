@@ -1,6 +1,7 @@
 /**
  * https://takeuforward.org/data-structure/lowest-common-ancestor-for-two-given-nodes/
- * 
+ * SC -> O(1)
+ * TC -> O(N)
  */
 
 function Node(data) {
