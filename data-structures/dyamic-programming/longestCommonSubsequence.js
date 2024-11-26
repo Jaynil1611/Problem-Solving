@@ -45,9 +45,37 @@ function longestCommonSubsequence(s, t) {
       }
     }
   }
-  return dp[n][m];
+
+  const ans = printLCS(dp, s, t);
+
+  return [dp[n][m], ans];
+}
+
+function printLCS(dp, s, t) {
+  const n = s.length;
+  const m = t.length;
+  const maxLength = dp[n][m];
+
+  let i = n,
+    j = m,
+    index = maxLength - 1;
+  let ans = new Array(index);
+
+  while (i > 0 && j > 0) {
+    if (s[i - 1] === t[j - 1]) {
+      ans[index] = s[i - 1];
+      i--;
+      j--;
+      index--;
+    } else if (dp[i - 1][j] > dp[i][j - 1]) {
+      i--;
+    } else {
+      j--;
+    }
+  }
+  return ans.join("");
 }
 
 const string1 = "awfecd";
 const string2 = "bassfecd";
-console.log(longestCommonSubsequenceOptimised(string1, string2));
+console.log(longestCommonSubsequence(string1, string2));
