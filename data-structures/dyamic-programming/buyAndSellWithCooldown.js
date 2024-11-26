@@ -1,7 +1,9 @@
 /**
  * https://takeuforward.org/data-structure/buy-and-sell-stocks-with-cooldown-dp-39/
- *
+ * TC -> O(N)
+ * SC -> O(N)
  */
+
 function bestTimeToBuyStocksWithCooldown(array) {
   const n = array.length;
 
