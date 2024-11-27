@@ -11,6 +11,8 @@ function maximumProductSubarray(array) {
   let max = Number.NEGATIVE_INFINITY;
 
   for (let i = 0; i < n; i++) {
+    if (prefix === 0) prefix = 1;
+    if (suffix === 0) suffix = 1;
     prefix = prefix * array[i];
     suffix = suffix * array[n - i - 1];
     max = Math.max(max, prefix, suffix);
