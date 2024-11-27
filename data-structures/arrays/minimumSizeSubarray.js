@@ -1,5 +1,5 @@
 /**
- * https://leetcode.com/problems/minimum-size-subarray-sum/
+ * https://takeuforward.org/sliding-window/minimum-subarray-whose-sum-is-greater-or-equal-to-k
  * TC -> O(N)
  * SC -> O(1)
  */
