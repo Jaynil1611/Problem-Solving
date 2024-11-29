@@ -1,5 +1,7 @@
 /**
  * https://takeuforward.org/data-structure/sliding-window-maximum/
+ * TC -> O(2N)
+ * SC -> O(K) + O(N-K)
  */
 
 function findSlidingWindowMaximum(array, k) {
