@@ -1,12 +1,11 @@
 /**
  * https://takeuforward.org/data-structure/two-sum-check-if-a-pair-with-given-sum-exists-in-array/
- * TC -> O(N)
+ * TC -> O(N log N)
  * SC -> O(N) | O(1)
  */
 
 function twoSumSpaceOptimised(array, target) {
   const n = array.length;
-  let result = false;
   let start = 0;
   let end = n - 1;
 
