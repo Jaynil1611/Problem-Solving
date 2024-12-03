@@ -1,10 +1,10 @@
-/* Discussion Link: https://github.com/Jaynil1611/Problem-Solving/discussions/7 */
-
 /**
- * @param {number[][]} matrix
- * @return {void} Do not return anything, modify matrix in-place instead.
+ * https://takeuforward.org/data-structure/rotate-image-by-90-degree/
+ * TC -> O(N x N)
+ * SC -> O(1)
  */
-var rotate = function (matrix) {
+
+function rotateMatrix(matrix) {
   const matrixLength = matrix.length;
   if (matrixLength === 1) return matrix;
   let i = 0;
@@ -35,4 +35,13 @@ var rotate = function (matrix) {
       }
     }
   }
-};
+  return matrix;
+}
+
+const matrix = [
+  [5, 1, 9, 11],
+  [2, 4, 8, 10],
+  [13, 3, 6, 7],
+  [15, 14, 12, 16],
+];
+console.log(rotateMatrix(matrix));
