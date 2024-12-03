@@ -1,6 +1,23 @@
 /**
  * https://takeuforward.org/data-structure/find-the-repeating-and-missing-numbers/
+ * TC -> O(N)
+ * SC -> O(1)
  */
+
+function findRepeatAndMissingNumberSummationApproach(A) {
+  let arrLength = A.length;
+  let sum = Math.floor((arrLength * (arrLength + 1)) / 2);
+  let squareSum = Math.floor(
+    (arrLength * (arrLength + 1) * (2 * arrLength + 1)) / 6,
+  );
+  for (let i = 0; i < arrLength; i++) {
+    sum -= A[i];
+    squareSum -= A[i] ** 2;
+  }
+  const missingNumber = Math.floor(Math.floor(squareSum / sum + sum) / 2);
+  const duplicateNumber = missingNumber - sum;
+  return [duplicateNumber, missingNumber];
+}
 
 function findRepeatAndMissingNumber(input) {
   const array = input.slice();
@@ -24,5 +41,6 @@ function findRepeatAndMissingNumber(input) {
   return result;
 }
 
-const input = [1, 2, 3, 4, 6, 6];
+const input = [3, 1, 2, 5, 4, 6, 7, 5];
 console.log(findRepeatAndMissingNumber(input));
+console.log(findRepeatAndMissingNumberSummationApproach(input));
