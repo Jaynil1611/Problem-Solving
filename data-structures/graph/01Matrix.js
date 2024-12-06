@@ -14,7 +14,7 @@ function updateMatrix(mat) {
 
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < m; j++) {
-      if (mat[i][j] === 0) {
+      if (mat[i][j] === 1) {
         queue.push([i, j, 0]);
         distance[i][j] = 0;
       }
