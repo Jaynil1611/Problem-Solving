@@ -1,6 +1,9 @@
 /**
  * https://takeuforward.org/data-structure/print-all-permutations-of-a-string-array/
+ * TC -> O(N!) x O(N)
+ * SC -> Auxiliary space -> O(N) + O(N!) -> answer
  */
+
 function swap(i, j, nums) {
   let temp = nums[i];
   nums[i] = nums[j];
