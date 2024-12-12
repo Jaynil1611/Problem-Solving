@@ -1,6 +1,7 @@
 /**
  * https://takeuforward.org/arrays/left-rotate-an-array-by-d-places/
- *
+ * TC -> O(2N)
+ * SC -> O(1)
  */
 
 function reverse(array, start, end) {
