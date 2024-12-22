@@ -1,6 +1,8 @@
 /**
  * https://takeuforward.org/data-structure/m-coloring-problem/
  *
+ * TC -> N^M
+ * SC -> O(N) + O(N)
  */
 
 function Edge(src, dest) {
