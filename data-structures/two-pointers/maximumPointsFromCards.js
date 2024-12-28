@@ -1,5 +1,5 @@
 /**
- * https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
+ * https://takeuforward.org/sliding-window/maximum-points-you-can-obtain-from-cards
  * TC -> O(k)
  * SC -> O(1)
  */
