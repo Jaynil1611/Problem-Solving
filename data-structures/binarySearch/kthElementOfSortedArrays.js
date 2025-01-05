@@ -1,22 +1,21 @@
 /**
- * https://takeuforward.org/data-structure/median-of-two-sorted-arrays-of-different-sizes/
+ * https://takeuforward.org/data-structure/k-th-element-of-two-sorted-arrays/
  *
  * TC -> O(log(min(n1, n2)))
  * SC -> O(1)
  */
 
-function medianOfTwoSortedArrays(a, b) {
+function kthElementOfTwoSortedArrays(a, b, k) {
   const n1 = a.length;
   const n2 = b.length;
 
-  if (n1 > n2) return medianOfTwoSortedArrays(b, a);
+  if (n1 > n2) return medianOfTwoSortedArrays(b, a, k);
 
   const minVal = Number.NEGATIVE_INFINITY;
   const maxVal = Number.POSITIVE_INFINITY;
-  let low = 0;
-  let high = n1;
-  let left = Math.floor((n1 + n2 + 1) / 2);
-  const total = n1 + n2;
+  let low = Math.max(0, k - n2);
+  let high = Math.min(n1, k);
+  let left = k;
   while (low <= high) {
     const mid1 = Math.floor((low + high) / 2);
     const mid2 = left - mid1;
@@ -31,11 +30,7 @@ function medianOfTwoSortedArrays(a, b) {
     if (mid2 - 1 >= 0) l2 = b[mid2 - 1];
 
     if (l1 <= r2 && l2 <= r1) {
-      if (total % 2 === 1) return Math.max(l1, l2);
-      else {
-        const num = Math.max(l1, l2) + Math.min(r1, r2);
-        return num / 2;
-      }
+      return Math.max(l1, l2);
     }
 
     if (l1 > r2) {
@@ -49,4 +44,5 @@ function medianOfTwoSortedArrays(a, b) {
 
 const num1 = [7, 12, 14, 15];
 const num2 = [1, 2, 3, 4, 9, 11];
-console.log(medianOfTwoSortedArrays(num1, num2));
+const k = 5;
+console.log(kthElementOfTwoSortedArrays(num1, num2, k));
