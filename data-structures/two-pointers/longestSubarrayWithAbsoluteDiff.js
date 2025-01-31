@@ -1,3 +1,10 @@
+/**
+ * https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit
+ * 
+ * TC -> O(N)
+ * SC -> O(N)
+ */
+
 function longestSubarrayWithAbsoluteDiff(nums, limit) {
   let increasingDeque = [];
   let decreasingDeque = [];
