@@ -11,6 +11,7 @@ function Edge(src, dest) {
 
 const Graph = function (edges) {
   const adj = new Map();
+  const size = edges.length;
 
   for (let edge of edges) {
     const { src, dest } = edge;
