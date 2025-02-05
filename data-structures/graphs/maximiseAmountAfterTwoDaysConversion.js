@@ -1,6 +1,8 @@
 /**
+ * https://leetcode.com/problems/maximize-amount-after-two-days-of-conversions
  *
- *
+ * TC -> O(V*(V+E))
+ * SC -> O(N+M)
  */
 
 function makeGraph(pairs, rates) {
